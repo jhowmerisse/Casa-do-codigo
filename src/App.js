@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./App.css";
 import Table from "./Table";
-import { render } from "@testing-library/react";
+import Formulario from "./Formulario";
 
 class App extends React.Component {
   state = {
@@ -39,11 +39,18 @@ class App extends React.Component {
     });
   };
 
+  insertAutor = (autor) => {
+    this.setState({
+      autores: [...this.state.autores, autor]
+    });
+  };
+
   render() {
     return (
-      <div className="App">
+      <Fragment>
         <Table autores={this.state.autores} removeAutor={this.removeAutor} />
-      </div>
+        <Formulario insertAutor={this.insertAutor} />
+      </Fragment>
     );
   }
 }
