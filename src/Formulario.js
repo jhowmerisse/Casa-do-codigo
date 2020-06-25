@@ -22,7 +22,7 @@ class Formulario extends React.Component {
     const { name, value } = event.target;
 
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -31,36 +31,54 @@ class Formulario extends React.Component {
 
     return (
       <form>
-        <label htmlFor="nome">Nome</label>
-        <input
-          id="nome"
-          type="text"
-          name="nome"
-          value={nome}
-          onChange={this.insertAutor}
-        />
-
-        <label htmlFor="livro">Livro</label>
-        <input
-          id="livro"
-          type="text"
-          name="livro"
-          value={livro}
-          onChange={this.insertAutor}
-        />
-
-        <label htmlFor="preco">Preço</label>
-        <input
-          id="preco"
-          type="text"
-          name="preco"
-          value={preco}
-          onChange={this.insertAutor}
-        />
-
-        <button type="button" onClick={this.submitForm}>
-          Salvar
-        </button>
+        <div className="row">
+          <div className="input-field col s4">
+            <label htmlFor="nome" className="input-field">
+              Nome
+            </label>
+            <input
+              className="validate"
+              id="nome"
+              type="text"
+              name="nome"
+              value={nome}
+              onChange={this.insertAutor}
+            />
+          </div>
+          <div className="input-field col s4">
+            <label htmlFor="livro" className="input-field">
+              Livro
+            </label>
+            <input
+              className="validate"
+              id="livro"
+              type="text"
+              name="livro"
+              value={livro}
+              onChange={this.insertAutor}
+            />
+          </div>
+          <div className="input-field col s4">
+            <label htmlFor="preco" className="input-field">
+              Preço
+            </label>
+            <input
+              className="validate"
+              id="preco"
+              type="text"
+              name="preco"
+              value={preco}
+              onChange={this.insertAutor}
+            />
+          </div>
+          <button
+            className="waves-effect waves-light indigo lighten-2 btn"
+            type="button"
+            onClick={this.submitForm}
+          >
+            Salvar
+          </button>
+        </div>
       </form>
     );
   }
